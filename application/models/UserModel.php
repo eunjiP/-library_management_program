@@ -6,11 +6,11 @@ use PDO;
 class UserModel extends Model {
     public function insUser(&$param) {
         $sql = "INSERT INTO t_user
-                ( email, pw, nm ) 
+                ( id, pw, name ) 
                 VALUES 
-                ( :email, :pw, :nm )";
+                ( :id, :pw, :nm )";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":email", $param["email"]);
+        $stmt->bindValue(":id", $param["id"]);
         $stmt->bindValue(":pw", $param["pw"]);
         $stmt->bindValue(":nm", $param["nm"]);
         $stmt->execute();

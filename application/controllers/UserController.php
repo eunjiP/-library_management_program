@@ -1,17 +1,16 @@
 <?php
 namespace application\controllers;
 
-use application\libs\Application;
-
 class UserController extends Controller {
 
     //로그인
-    public function signin() {        
+    public function signin() {   
+        $this->addAttribute(_JS, ["user/signin"]);     
         switch(getMethod()) {
             case _GET:
                 return "user/signin.php";
             case _POST:
-                $email = $_POST["email"];
+                $email = $_POST["id"];
                 $pw = $_POST["pw"];
                 $param = [ "email" => $email ];
                 $dbUser = $this->model->selUser($param);
@@ -25,25 +24,20 @@ class UserController extends Controller {
             }
     }
 
+    public function usersignup() {
+        return "user/signup.html";
+    }
+
     //회원가입
     public function signup() {
         switch(getMethod()) {
             case _GET:
                 return "user/signup.php";
             case _POST:
-                $email = $_POST["email"];
-                $pw = $_POST["pw"];
-                $hashedPw = password_hash($pw, PASSWORD_BCRYPT);
-                $nm = $_POST["nm"];
-                $param = [
-                    "email" => $email,
-                    "pw" => $hashedPw,
-                    "nm" => $nm
-                ];
-
-                $this->model->insUser($param);
-
-                return "redirect:signin";
+                $json = getJson();
+                $hashedPw = password_hash($json['pw'], PASSWORD_BCRYPT);
+                $json['pw'] = $hashedPw;
+                return [_RESULT => $this->model->insUser($json)];
         }
     }
 

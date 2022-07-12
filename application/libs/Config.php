@@ -1,5 +1,5 @@
 <?php
-    define("_SERVICE_NM", "PHPgram");
+    define("_SERVICE_NM", "booksProgram");
     define('_ROOT', $_SERVER['DOCUMENT_ROOT']);
     define('_DBTYPE', 'mysql'); //mysql, mariadb 등
     define('_DBHOST', 'localhost'); //DB접속 주소
