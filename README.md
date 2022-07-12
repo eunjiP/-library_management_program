@@ -5,7 +5,7 @@
 -----
 **도서관리 프로그램** 
 
-- 사용언어 : PHP, JavaScript, 
+- 사용언어 : PHP, JavaScript, Html, Css, Vue.js
 
 - 사용 IDE : Visual Studio Code
 
