@@ -13,6 +13,6 @@
 
 |회원가입 page|
 |------------|
-|[![회원가입](https://user-images.githubusercontent.com/101936519/178485677-eb959d19-dffd-41f8-83dd-03235d08b726.jpg)]|
+|![회원가입](https://user-images.githubusercontent.com/101936519/178485677-eb959d19-dffd-41f8-83dd-03235d08b726.jpg)|
 
 
