@@ -10,12 +10,12 @@ class UserController extends Controller {
             case _GET:
                 return "user/signin.php";
             case _POST:
-                $email = $_POST["id"];
-                $pw = $_POST["pw"];
-                $param = [ "email" => $email ];
-                $dbUser = $this->model->selUser($param);
-                if(!$dbUser || !password_verify($pw, $dbUser->pw)) {                                                        
-                    return "redirect:signin?email={$email}&err";
+                $json = getJson();
+                $dbUser = $this->model->selUser($json);
+                if(!$dbUser) {
+                    return [_RESULT => "아이디가 없습니다. 회원가입 후 이용가능합니다."];
+                } elseif(!password_verify($json['userpw'], $dbUser->pw)) {
+                    return [_RESULT => "비밀번호가 일치하지 않습니다. 확인 후 다시 로그인 부탁드립니다."];
                 }
                 $dbUser->pw = null;
                 $dbUser->regdt = null;
