@@ -66,7 +66,7 @@ export default {
 
 .modal-header {
   margin-top: 0;
-  color: #42b983;
+  color:red;
   font-weight: bold;
 }
 

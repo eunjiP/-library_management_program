@@ -3,27 +3,55 @@
         <div class="test"><i id="userIcon" class="fa-regular fa-circle-user"></i></div>
         <div class="input">
             <div><input type="text" v-model="userid" placeholder="학번"></div>
-            <div><input type="text" v-model="userpw" placeholder="비밀번호"></div>
-            <div class="btn cursor">LOGIN</div>
+            <div><input type="password" v-model="userpw" placeholder="비밀번호"></div>
+            <div class="btn cursor" @click="userLogin">LOGIN</div>
         </div>
    </div>
    <div id="footer">
         <div class="btn cursor" id="joinbtn">JOIN</div>
    </div>
+   <AlertModal :show="modalShow" header="오류창" :body="msg" @close="changeShow"></AlertModal>
 </template>
 
 <!-- <script src="https://kit.fontawesome.com/57749be668.js" crossorigin="anonymous"></script> -->
 <script>
+    import axios from 'axios';
+    import AlertModal from '../components/common/AlertModal.vue';
 
 export default {
+    components: {
+        AlertModal
+    },
     data() {
         return {
             userid:'',
-            userpw:''
+            userpw:'',
+            modalShow: false,
+            msg:""
         }
     },
     methods: {
-
+        userLogin() {
+            if(this.userid.trim() !== '' && this.userpw.trim() !== '') {
+                const param = {
+                    userid:this.userid,
+                    userpw:this.userpw
+                }
+                axios.post('/user/signin', param)
+                .then(res => {
+                    if(res.status === 200 && res.data.result) {
+                        this.msg = res.data.result;
+                        this.modalShow = true;
+                    }
+                })
+            }
+        },
+        changeShow() {
+            this.modalShow = false
+            this.msg = ''
+            userid = ''
+            userpw = ''
+        }
     }
 }
 </script>

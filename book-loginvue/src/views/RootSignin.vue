@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div id="main" class="rootBg">
     <div class="test"><i id="userIcon" class="fa-regular fa-circle-user"></i></div>
     <div class="input">
         <div><input type="text" v-model="rootid" placeholder="관리자ID"></div>
@@ -8,7 +8,7 @@
     </div>
    </div>
    <div id="footer">
-        <div class="btn" id="joinbtn">JOIN</div>
+        <div class="btn rootColor">JOIN</div>
    </div>
 </template>
 
@@ -17,15 +17,15 @@
 export default {
     data() {
         return {
-            userid:'',
-            userpw:''
+            rootid:'',
+            rootpw:''
         }
     },
 }
 </script>
 
 <style scoped>
-#main { background-color: #7BB3BC;
+#main { 
     text-align: center;
     margin-left: 10vw;
     border-radius: 20vw 0 0 20vw;
@@ -39,7 +39,6 @@ export default {
 input { width: 70%; height: 5vh; text-align: center; border: none;
     border-radius: 5px; background-color: #B2EBF4;}
 .btn {font-size: 2rem; font-weight: bold;}
-#joinbtn {color: #7BB3BC;}
 #userIcon { font-size: 5rem;}
 #footer {text-align: center; margin-top: 4vh;}
 </style>
