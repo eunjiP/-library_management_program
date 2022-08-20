@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>
+    <div class="header">
       <h1 class="subColor fw-bold" v-show="user">User Login</h1>
       <h1 class="rootColor fw-bold" v-show="root">Manager Login</h1>
       <h5 class="subColor fw-bold" v-show="user">Welcome to the website</h5>
@@ -9,7 +9,7 @@
           <router-link to="/" id="userRouter" @link-exact-active="changeUser" @click="changeUser">User Login</router-link> |
           <router-link to="/rootsignin" id="rootRouter" @link-exact-active="changeUser" @click="changeRoot">Root Login</router-link>
       </nav>
-    </header>
+    </div>
     <router-view />
   </div>
 </template>
@@ -73,7 +73,7 @@ body>div {
 .subBg {background-color: #7BB3BC;}
 .rootColor {color: #8FACD7}
 .rootBg { background-color: #8FACD7;}
-header {
+.header {
   text-align: center;
   font-size: 1.5rem;
   margin: 3vh 0;

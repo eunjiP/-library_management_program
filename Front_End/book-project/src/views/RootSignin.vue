@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div id="main" class="rootBg">
-        <div class="userIconDiv"><i id="userIcon" class="fa-regular fa-circle-user text-white"></i></div>
-        <div class="input">
-            <div><input type="text" v-model="rootid" placeholder="관리자ID"></div>
-            <div><input type="text" v-model="rootpw" placeholder="비밀번호"></div>
-            <div class="btn text-white">LOGIN</div>
+            <div class="userIconDiv"><i id="userIcon" class="fa-regular fa-circle-user text-white"></i></div>
+            <div class="login__input">
+                <div><input type="text" v-model="rootid" placeholder="관리자ID"></div>
+                <div><input type="text" v-model="rootpw" placeholder="비밀번호"></div>
+                <div class="btn text-white">LOGIN</div>
+            </div>
         </div>
-    </div>
-    <div id="footer">
-            <div class="btn rootColor">JOIN</div>
-    </div>
+        <div id="footer">
+                <div class="btn rootColor">JOIN</div>
+        </div>
     </div>
 </template>
 
@@ -27,18 +27,20 @@ export default {
 </script>
 
 <style scoped>
-#main { 
+.container { padding: 0; width: 100%;}
+.container #main { 
     text-align: center;
     margin-left: 10vw;
     border-radius: 20vw 0 0 20vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100%;
 }
-.input {display: grid;
+.login__input {display: grid;
     align-content: space-evenly;
     color: #FFFFFF;
     }
-input { width: 70%; height: 5vh; text-align: center; border: none;
+.login__input input { width: 70%; height: 5vh; text-align: center; border: none;
     border-radius: 5px; background-color: #B2EBF4;}
 .btn {font-size: 2rem; font-weight: bold;}
 .userIconDiv {

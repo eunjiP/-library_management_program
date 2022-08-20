@@ -2,7 +2,7 @@
     <div class="container">
         <div id="main">
             <div class="userIconDiv"><i id="userIcon" class="fa-regular fa-circle-user text-white"></i></div>
-            <div class="input">
+            <div class="login__input">
                 <div><input type="text" v-model="userid" placeholder="학번"></div>
                 <div><input type="password" v-model="userpw" placeholder="비밀번호"></div>
                 <div class="btn cursor text-white" @click="userLogin">LOGIN</div>
@@ -60,18 +60,20 @@ export default {
 </script>
 
 <style scoped>
-#main { background-color: #7BB3BC;
+.container { padding: 0;}
+.container #main { background-color: #7BB3BC;
     text-align: center;
     margin-left: 10vw;
     border-radius: 20vw 0 0 20vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100%;
 }
-.input {display: grid;
+.login__input {display: grid;
     align-content: space-evenly;
     color: #FFFFFF;
     }
-input { width: 70%; height: 5vh; text-align: center; border: none;
+.login__input input { width: 70%; height: 5vh; text-align: center; border: none;
     border-radius: 5px; background-color: #B2EBF4;}
 .btn {font-size: 2rem; font-weight: bold;}
 #joinbtn {color: #7BB3BC;}

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import UserSignin from '../views/UserSignin';
 import RootSignin from '../views/RootSignin';
+import join from '../views/join';
 
 const routes = [
   {
@@ -11,11 +12,13 @@ const routes = [
   {
     path: '/rootsignin',
     name: 'rootsignin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/RootSignin.vue')
-  }
+    component: RootSignin
+  },
+  {
+    path: '/join',
+    name: 'join',
+    component: join
+  },
 ]
 
 const router = createRouter({
