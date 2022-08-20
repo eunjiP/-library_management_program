@@ -15,11 +15,11 @@
 |------------|
 |![회원가입](https://user-images.githubusercontent.com/101936519/178485677-eb959d19-dffd-41f8-83dd-03235d08b726.jpg)|
 
-|User 로그인 page|
+| 로그인 page|
 |------------|
 |![로그인](https://user-images.githubusercontent.com/101936519/185731981-def7a1fe-c1b5-452e-90c4-b8bf3b7c07df.jpg)|
 
-|User 로그인 page|
+|관리자 로그인 page|
 |------------|
 |![관리자로그인](https://user-images.githubusercontent.com/101936519/185732097-26ef788b-5012-4848-bf9d-37e8f3e2016f.jpg)|
 
