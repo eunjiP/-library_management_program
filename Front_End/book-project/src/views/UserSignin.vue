@@ -1,26 +1,24 @@
 <template>
-   <div id="main">
-        <div class="test"><i id="userIcon" class="fa-regular fa-circle-user"></i></div>
-        <div class="input">
-            <div><input type="text" v-model="userid" placeholder="학번"></div>
-            <div><input type="password" v-model="userpw" placeholder="비밀번호"></div>
-            <div class="btn cursor" @click="userLogin">LOGIN</div>
+    <div class="container">
+        <div id="main">
+            <div class="userIconDiv"><i id="userIcon" class="fa-regular fa-circle-user text-white"></i></div>
+            <div class="input">
+                <div><input type="text" v-model="userid" placeholder="학번"></div>
+                <div><input type="password" v-model="userpw" placeholder="비밀번호"></div>
+                <div class="btn cursor text-white" @click="userLogin">LOGIN</div>
+            </div>
         </div>
-   </div>
-   <div id="footer">
-        <div class="btn cursor" id="joinbtn">JOIN</div>
-   </div>
-   <AlertModal :show="modalShow" header="오류창" :body="msg" @close="changeShow"></AlertModal>
+        <div id="footer">
+            <div class="btn cursor" id="joinbtn" @click="UserJoin">JOIN</div>
+        </div>
+    </div>
 </template>
 
 <!-- <script src="https://kit.fontawesome.com/57749be668.js" crossorigin="anonymous"></script> -->
 <script>
-    import axios from 'axios';
-    import AlertModal from '../components/common/AlertModal.vue';
-
 export default {
     components: {
-        AlertModal
+        
     },
     data() {
         return {
@@ -48,6 +46,9 @@ export default {
                 })
             }
         },
+        UserJoin() {
+
+        },
         changeShow() {
             this.modalShow = false
             this.msg = ''
@@ -74,6 +75,9 @@ input { width: 70%; height: 5vh; text-align: center; border: none;
     border-radius: 5px; background-color: #B2EBF4;}
 .btn {font-size: 2rem; font-weight: bold;}
 #joinbtn {color: #7BB3BC;}
-#userIcon { font-size: 5rem;}
+.userIconDiv {
+    margin: auto 0;
+}
+#userIcon { font-size: 30vh; }
 #footer {text-align: center; margin-top: 4vh;}
 </style>

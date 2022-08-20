@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <h1 class="subColor" v-show="user">User Login</h1>
-      <h1 class="rootColor" v-show="root">Manager Login</h1>
-      <h5 class="subColor" v-show="user">Welcome to the website</h5>
-      <h5 class="rootColor" v-show="root">Welcome to the website</h5>
+      <h1 class="subColor fw-bold" v-show="user">User Login</h1>
+      <h1 class="rootColor fw-bold" v-show="root">Manager Login</h1>
+      <h5 class="subColor fw-bold" v-show="user">Welcome to the website</h5>
+      <h5 class="rootColor fw-bold" v-show="root">Welcome to the website</h5>
       <nav>
           <router-link to="/" id="userRouter" @link-exact-active="changeUser" @click="changeUser">User Login</router-link> |
           <router-link to="/rootsignin" id="rootRouter" @link-exact-active="changeUser" @click="changeRoot">Root Login</router-link>
@@ -57,7 +57,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    height: 80%
+    height: 80%;
+    background-color: #b2ebf4;
 }
 body>div {
     box-shadow: 0 4px 50px rgba(0, 0, 0, .5)
